@@ -3,12 +3,14 @@ import logging
 import sys
 from typing import Tuple
 
+
 """
 Write a simple CLI script, that when given a 64-byte string, it finds a suitable 4-byte prefix so that, a
 SHA256 hash of the prefix combined with the original string of bytes, has two last bytes as 0xca, 0xfe.
 Script should expect the original string to be passed in hexadecimal format and should return two
 lines, first being the SHA256 string found and second 4-byte prefix used (in hexadecimal format).
 """
+
 
 logger = logging.getLogger(__name__)
 
@@ -99,4 +101,4 @@ if __name__ == '__main__':
         )
 
     sha256_hex, nonce = proof_of_work(input_hex=hex_string)
-    logger.info(f'{sha256_hex}\n{nonce}')
+    print(f'{sha256_hex}\n{nonce}')
